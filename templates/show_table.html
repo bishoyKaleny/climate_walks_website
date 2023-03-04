@@ -1,0 +1,54 @@
+
+<!doctype html>
+<html>
+  <head>
+    <style>
+        body{
+          background:rgb(103,148,107);
+          padding-top: 30px;
+        }
+        div {
+          margin: 10px;
+          border: 1px solid gray;
+          padding: 10px;
+        }
+  
+        p {
+          font-size: 30px;
+          font-weight: bold;
+          color: blue;
+        }
+  
+        a {
+          text-decoration: none;
+          color: white;
+        }
+  
+        hr {
+          border: 1px solid black;
+        }
+      </style>
+  </head>
+  <body>
+    {% load static %} <img src="{% static "mapping/media/climate.png" %}" alt="My image"
+    style="object-fit:contain;
+           width:250px;
+           height:100px"
+           />
+{% for meta in meta_data %}
+      <div>
+        Start Time:{{meta.start_time}} <br>
+        End Time:{{meta.end_time}} <br>
+        Number of rows:{{meta.len}} <br>
+        Parameters:
+        {% for name in meta.names %}
+        {{name}} <br>
+        {%endfor%}
+
+
+      <div>
+{% endfor %}
+
+{% if request.user.is_authenticated %}
+<a href="{% url 'logout' %}">Logout</a>
+{% endif %}

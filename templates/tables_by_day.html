@@ -1,0 +1,57 @@
+
+<!doctype html>
+<html>
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+    <style>
+        body{
+          background:rgb(103,148,107);
+          padding-top: 30px;
+        }
+        div {
+          margin: 10px;
+          border: 1px solid gray;
+          padding: 10px;
+        }
+  
+        p {
+          font-family:'Lato';
+          font-size: 30px;
+          font-weight: bold;
+          color: blue;
+        }
+  
+        a {
+          font-family:'Lato'
+          text-decoration: none;
+          color: white;
+        }
+  
+        hr {
+          border: 1px solid black;
+        }
+      </style>
+  </head>
+  <body>
+    {% load static %} <img src="{% static "mapping/media/climate.png" %}" alt="My image"
+    style="object-fit:contain;
+           width:250px;
+           height:100px"
+           />
+    {% for tablee in table_by_day %}
+      <div>
+        
+        <p><a href="/show_table/{{tablee.id}}">{{tablee.table_by_day}}</a></p>
+        
+        <a href="/show_map/{{tablee.id}}">Get map</a>  &nbsp;  &nbsp; &nbsp;   <a href="/display_csv/{{tablee.id}}">   Get raw csv data</a>  &nbsp;  &nbsp; &nbsp;   <a href="/get_processed_data/{{tablee.id}}">   Get processed csv data </a> &nbsp;  &nbsp; &nbsp;   <a href="/delete/{{tablee.id}}">   Delete</a> 
+
+
+        <hr>
+      </div>
+    {% endfor %}
+    {% if request.user.is_authenticated %}
+      <a href="{% url 'logout' %}">Logout</a>
+    {% endif %}
+  </body>
+</html>

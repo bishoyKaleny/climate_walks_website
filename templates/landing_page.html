@@ -1,0 +1,45 @@
+<head>
+    <style>
+        #background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; 
+        }
+        /* Add this to center the button */
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        /* Add this to style the button */
+        button {
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            padding: 30px 60px; /* Increase padding to make the button bigger */
+            font-size: 20px; /* Increase font size */
+            border: none; /* Remove border */
+            cursor: pointer; /* Add cursor on hover */
+            transition: background-color 0.5s ease-in-out; /*
+            transform: scale(1);
+        }
+        button:hover {
+            /* Other button styles */
+            transform: scale(1.1); /* Increase the button's scale on hover */
+        }
+    </style>
+</head>
+
+<body>
+    {% load static %}  <img id="background" src="{%static "mapping/media/GIF-Maps.gif"%}" />
+    <div class="center">
+        <a href="/login">
+            <button>Go to login page</button>
+        </a>
+    </div>
+</body>
+
+

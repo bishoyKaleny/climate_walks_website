@@ -1,0 +1,83 @@
+{% comment %} 
+
+<div>
+    <form method="POST" action="">
+        {% csrf_token %}
+
+        <label>Username:</label>
+        <input type="text" name="username" placeholder="Enter Username" />
+
+        <label>Password:</label>
+        <input type="password" name="password" placeholder="Enter Password" />
+
+        <input type="submit" value="Login" />
+    </form>
+
+    
+</div> {% endcomment %}
+<head>
+    <style>
+      body{
+        background:rgb(103,148,107);
+        padding-top: 30px;
+      }
+      form {
+        width: 300px;
+        margin: 0 auto;
+        text-align: center;
+        left      : 50%;
+        top       : 50%;
+        position  : absolute;
+        transform : translate(-50%, -50%);
+      }
+  
+      label {
+        display: block;
+        margin-bottom: 8px;
+      }
+  
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+      }
+  
+      input[type="submit"] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <head>
+    <title>Login</title>
+  </head>
+  <body>
+    {% load static %} <img src="{% static "mapping/media/climate.png" %}" alt="My image"
+    style="object-fit:contain;
+           width:250px;
+           height:100px"
+           />
+    <div>
+      <form method="POST" action="">
+        {% csrf_token %}
+
+        <label>Username:</label>
+        <input type="text" name="username" placeholder="Enter username" />
+
+        <label>Password:</label>
+        <input type="password" name="password" placeholder="Enter password" />
+
+        <input type="submit" value="Login" />
+      </form>
+    </div>
+  </body>
